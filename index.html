@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>last-hw</title>
+</head>
+<body>
+    
+    <div class="container my-5">
+        <div class="d-flex justify-content-between">
+            <h1 class="h2">Gilos.uz/smartphones</h1>
+            
+            <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#add-student-modal">
+                <span class="me-2">Add product</span>
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-3">
+                <h2 class="h4 mb-4">Filter</h2>
+                <form action="#" id="filter">
+                    <div class="mb-3">
+                        <label for="search" class="form-label">Search</label>
+                        <input type="search" class="form-control" id="search" placeholder="Falonchi">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="number" class="form-control" id="from" min="0" aria-label="From" placeholder="From">
+                            </div>
+                            <div class="col-6">
+                                <input type="number" class="form-control" id="to" min="0" aria-label="To" placeholder="To">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="manufacturer" class="form-label">Manufacturer</label>
+                        <select class="form-select" id="manufacturer">
+                            <option value="0">All</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="sortby" class="form-label">Sort by</label>
+                        <select class="form-select" id="sortby">
+                            <option value="1">Name</option>
+                            <option value="2">Price: to lowest</option>
+                            <option value="3">Price: to highest</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary d-block w-100 py-2">Filter</button>
+                </form>
+            </div>
+            
+            <section class="col-9">
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h2 class="h4 mb-4">Products list</h2>
+                    <p>Count: 4</p>
+                </div>
+                
+                <ul class="row list-unstyled g-3 d-flex flex-wrap ">
+                    <li class="flex-wrap d-flex  card-list-wrap">
+                        
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="add-student-modal" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addStudentModalLabel">Add product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="add-mobile-form">
+                        <div class="mb-3">
+                            <label for="product-title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="productTitle" placeholder="Falon telefon">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Narxi</label>
+                            <input type="number" class="form-control" id="price" placeholder="$... .">
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-manufacturer" class="form-label">Manufacturer</label>
+                            <select class="form-select" id="productManufacturer">
+                                <option class="optn" selected value="Xiomi">Xiomi</option>
+                                <option class="optn" selected value="Samsung">Samsung</option>
+                                <option class="optn" selected value="Apple">Apple</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3 aksses">
+                            <label for="benefits" class="form-label">Benefits</label>
+                            <input type="text" class="form-control" id="benefits" placeholder=":)">
+                            
+                            <ul class="d-flex flex-wrap list-unstyled mt-3">
+                                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">8gb</button></li>
+                                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">128gb</button></li>
+                                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">Waterproof</button></li>
+                                <li id="falon" class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">Falon yaxshi tarafi</button></li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="btn btn-primary d-block w-100 p-2">Add product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="edit-product-modal" tabindex="-1" aria-labelledby="editStudentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editStudentModalLabel">Edit product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="edit-mobile-form">
+                        <div class="mb-3">
+                            <label for="product-title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="edit-productTitle" placeholder="Falon telefon">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Narxi</label>
+                            <input type="number" class="form-control" id="edit-price" placeholder="$... .">
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-manufacturer" class="form-label">Manufacturer</label>
+                            <select class="form-select" id="edit-productManufacturer">
+                                <option class="optn" selected value="Xiomi">Xiomi</option>
+                                <option class="optn" selected value="Samsung">Samsung</option>
+                                <option class="optn" selected value="Apple">Apple</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3 aksses">
+                            <label for="benefits" class="form-label">Benefits</label>
+                            <input type="text" class="form-control" id="edit-benefits" placeholder=":)">
+                            
+                            <ul class="d-flex flex-wrap list-unstyled mt-3">
+                                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">8gb</button></li>
+                                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">128gb</button></li>
+                                <li class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">Waterproof</button></li>
+                                <li id="falon" class="me-1 mb-1"><button type="button" class="btn btn-sm badge rounded-pill btn-danger">Falon yaxshi tarafi</button></li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="btn btn-primary d-block w-100 p-2">Edit product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <template class="product-template">
+        <div class="card mt-1 mx-1" style="width: 300px; height: 500px;">
+            <img src="https://picsum.photos/300/200" alt="" class="card-img-top">
+            <div class="card-body ">
+                <h3 class="card-title"></h3>
+                <p class="card-mark card-text fw-bold"><mark></mark></p>
+                <p class="last-mark card-text text-decoration-line-through"><s></s></p> 
+                <p class="badge bg-success"></p>
+                
+                <p class="card-text card-date"></p>
+                
+                <ul class="d-flex flex-wrap list-unstyled">
+                    <li class="badge ram bg-primary me-1 mb-1"></li>
+                    <li class="badge store bg-primary me-1 mb-1"></li>
+                    <li class="badge color bg-primary me-1 mb-1"></li>
+                    <li class="badge info bg-primary me-1 mb-1"></li>
+                </ul>
+                <p class="idd"></p>
+                
+                <div class="position-absolute top-0 end-0 d-flex">
+                    <button class="btn rounded-0 btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-product-modal">
+                        <i style="pointer-events: none;" class="fas fa-pen"></i>
+                    </button>
+                    <button class="btn rounded-0 btn-danger" >
+                        <i style="pointer-events: none;" class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="js/data.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
